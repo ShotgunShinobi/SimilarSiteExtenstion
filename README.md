@@ -97,5 +97,6 @@ When activated, the extension fetches the URL of the active tab and sends a requ
 
 * This extension relies on the Gemini API for suggestions. The quality and availability of suggestions depend on the API.
 * Ensure you comply with the Gemini API's terms of service. The API key is currently left blank in `popup.js` as per instructions for environments that handle it automatically. For local development or other deployment scenarios, you might need to manage the API key appropriately.
+* This extension has been vibe-coded by me.
 
 ---
