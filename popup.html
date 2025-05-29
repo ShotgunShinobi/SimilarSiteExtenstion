@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Similar Sites</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            width: 350px; /* Increased width for better content display */
+            min-height: 200px; /* Minimum height */
+            max-height: 400px; /* Maximum height to allow scrolling if many sites */
+            overflow-y: auto; /* Allow vertical scrolling */
+        }
+        .container {
+            padding: 16px;
+        }
+        .site-item {
+            padding: 8px;
+            border-bottom: 1px solid #e5e7eb; /* light gray border */
+            transition: background-color 0.2s ease-in-out;
+        }
+        .site-item:last-child {
+            border-bottom: none;
+        }
+        .site-item:hover {
+            background-color: #f3f4f6; /* lighter gray on hover */
+        }
+        .site-link {
+            color: #2563eb; /* blue link */
+            text-decoration: none;
+            word-break: break-all; /* Break long URLs */
+        }
+        .site-link:hover {
+            text-decoration: underline;
+        }
+        .loader {
+            border: 4px solid #f3f4f6;
+            border-top: 4px solid #3b82f6;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="container mx-auto">
+        <h1 class="text-xl font-semibold text-gray-800 mb-2 text-center">Similar Sites Finder</h1>
+        
+        <div class="mb-3 p-3 bg-blue-100 border border-blue-200 rounded-lg shadow">
+            <p class="text-sm text-gray-600">Current site:</p>
+            <p id="currentSite" class="text-md font-medium text-blue-700 truncate">-</p>
+        </div>
+
+        <h2 class="text-lg font-medium text-gray-700 mb-2">Suggested Similar Sites:</h2>
+        <div id="message" class="text-center text-gray-500 my-4">Loading suggestions...</div>
+        <div id="loader" class="loader"></div>
+        <ul id="similarSitesList" class="bg-white rounded-lg shadow divide-y divide-gray-200">
+            </ul>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
